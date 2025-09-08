@@ -4,6 +4,7 @@
   boot = {
     initrd = {
       availableKernelModules = [
+        "mmc_block"
         "nvme"
         "xhci_pci"
         "usbhid"
