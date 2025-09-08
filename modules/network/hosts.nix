@@ -1,0 +1,8 @@
+{ lib, ... }:
+
+{
+  networking = {
+    extraHosts = ''
+  '';
+  };
+}
