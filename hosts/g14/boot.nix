@@ -4,6 +4,7 @@
   boot = {
     initrd = {
       availableKernelModules = [
+        "mmc_core"
         "mmc_block"
         "nvme"
         "xhci_pci"
@@ -13,11 +14,11 @@
         "sdhci_pci"
       ];
 
-      luks.devices."crypted" = {
+      luks.devices.crypted = {
         device = lib.mkForce "/dev/nvme0n1p2";
         allowDiscards = true;
-
-        keyFile = "/dev/disk/by-uuid/0403-0201/luks.key";
+        keyFileSize = 4096;
+        keyFile = "/dev/disk/by-id/mmc-00000_0xcf100666";
       };
     };
 
